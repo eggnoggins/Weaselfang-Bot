@@ -6,6 +6,7 @@ const { token } = require('./config.json');
 const { SlashCommandBuilder } = require('@discordjs/builders');
 
 
+
 // Create a new client instance
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
@@ -28,7 +29,14 @@ client.once('ready', () => {
 	client.user.setPresence({ activities: [{ name: 'with fire 🔥' }], type: 'PLAYING' });
 });
 
-
+const prefix = "w!";
+client.on("messageCreate", (message) => {
+  // our new check:
+  if (!message.content.startsWith(prefix) || message.author.bot) return;
+  
+  if (message.content.startsWith(`${prefix}ping`)) {
+    message.channel.send("pong!");
+});
 
 // Login to Discord with your client's token
 client.login(token);
