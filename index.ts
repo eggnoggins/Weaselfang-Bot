@@ -10,15 +10,7 @@ const client = new DiscordJS.Client({
 })
 
 client.on('ready', () => {
-    console.log('The bot is ready')
+    console.log('Weaselfang has been sent to the mountain!')
 })
 
-client.on('messageCreate', (message) => {
-    if (message.content === 'ping') {
-        message.reply({
-            content: 'pong',
-        })
-    }
-})
-
-client.login(process.env.TOKEN)
+client.login(process.env.token)
