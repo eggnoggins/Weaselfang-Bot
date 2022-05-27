@@ -10,5 +10,7 @@ client.once('ready', () => {
 	console.log('Ready!');
 });
 
+client.user.setPresence({ activities: [{ name: 'with discord.js' }], status: 'idle' });
+
 // Login to Discord with your client's token
 client.login(token);
