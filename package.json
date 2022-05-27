@@ -1,18 +1,22 @@
 {
   "name": "weaselfang-bot",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.ts",
+  "description": "rp bot",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eggnoggins/Weaselfang-Bot.git"
+  },
+  "author": "eggnoggins",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eggnoggins/Weaselfang-Bot/issues"
+  },
+  "homepage": "https://github.com/eggnoggins/Weaselfang-Bot#readme",
   "dependencies": {
-    "discord.js": "^13.7.0",
-    "dotenv": "^16.0.1"
+    "discord.js": "^13.7.0"
   }
-  
 }
-
