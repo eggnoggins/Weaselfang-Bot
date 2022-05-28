@@ -1,6 +1,5 @@
-module.exports={
-    name:'ping', 
-    execute(message, arg){
-        message.reply('hello!!')
-    }
- }
+exports.run = (client, message, args) => {
+    message.channel.send("pong!").catch(console.error);
+}
+
+exports.name = "ping";
