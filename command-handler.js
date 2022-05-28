@@ -1,5 +1,5 @@
-import fs from 'fs'
-import getFiles from '.get-files'
+const fs = require('fs')
+const getFiles = required('./get-files')
 
 module.exports = (client) => {}
 
