@@ -11,11 +11,10 @@ const client = new Client({
 
 // When the client is ready, run this code (only once)
 client.on('ready', () => {
-	console.log('Weaselfang has been sent to the mountain!');
-	client.user.setPresence({ activities: [{ name: 'with fire 🔥' }], type: 'PLAYING' });
-
+	console.log('Weaselfang has been sent to the mountain!')
 	let handler = require('./command-handler')
 	if (handler.default) handler = handler.default
+	client.user.setPresence({ activities: [{ name: 'with fire 🔥' }], type: 'PLAYING' });
 
 	handler(client)
 });
