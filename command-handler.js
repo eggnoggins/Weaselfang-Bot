@@ -10,7 +10,7 @@ const suffix = '.js'
 const commandFiles = getFiles('./commands', suffix)
 console.log(commandFiles)
 
-for(const command of commandFiles) {
+for (const command of commandFiles) {
     let commandFile = require(command)
     if (commandFile.default) commandFile = commandFile.default
 
