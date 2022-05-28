@@ -5,7 +5,7 @@ const path = require('node:path');
 const { REST } = require("@discordjs/rest");
 const { prefix } = "w!"
 
-const { Client, Intents, Collection } = require("discord.js")
+const {Client, Intents, MessageEmbed, Presence, Collection, Interaction}= require ('discord.js')
 const client = new Client({ 
 	intents: [
 		Intents.FLAGS.GUILDS, 
