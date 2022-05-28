@@ -3,7 +3,7 @@ const { token } = require('./config.json');
 const fs = require('node:fs');
 const path = require('node:path');
 const { REST } = require("@discordjs/rest");
-const PREFIX = "w!"
+const { prefix } = "w!"
 
 const {Client, Intents, MessageEmbed, Presence, Collection, Interaction}= require ('discord.js')
 const client = new Client({ 
