@@ -1,4 +1,4 @@
-exports.run = (client, message, args) =>
+exports.run = (client, message) => {
 client.on('messageCreate', async message => {
     if (message.author.bot) return
     if (message.content.toLowerCase().startsWith("weasel,")) {
@@ -7,4 +7,4 @@ client.on('messageCreate', async message => {
 
       message.reply(result)
     }
-  })
+  })}
