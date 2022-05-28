@@ -1,5 +1,9 @@
 exports.run = (client, message, args) => {
-    message.channel.send("pong!").catch(console.error);
-}
+    if (message.author.bot) return
+      let replies = ['answer', 'yet another answer', 'wow another answer', 'you guessed it, another answer'];
+      let result = replies[Math.floor(Math.random() * (replies.length))]
 
-exports.name = "diceroll";
+      message.reply(result)
+    }
+
+exports.name = "roll";
