@@ -1,8 +1,7 @@
 // Require the necessary discord.js classes
 const DJS = require('discord.js')
 const { Intents } = DJS
-const { token } = require('./config.json');
-const { SlashCommandBuilder } = require('@discordjs/builders');
+require('./config.json');
 
 // Create a new client instance
 const client = new Client({ 
