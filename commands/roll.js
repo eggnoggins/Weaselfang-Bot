@@ -3,7 +3,7 @@ exports.run = (client, message, args) => {
       let replies = ['answer', 'yet another answer', 'wow another answer', 'you guessed it, another answer'];
       let result = replies[Math.floor(Math.random() * (replies.length))]
 
-      message(result)
+      message.reply(result)
     }
 
 exports.name = "roll";
