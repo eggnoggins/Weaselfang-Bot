@@ -4,6 +4,8 @@ const getFiles = required('./get-files')
 module.exports = (client) => {
 
 const commands = {}
+}
+
 
 const suffix = '.js'
 
@@ -39,5 +41,4 @@ client.on('messageCreate', (message) => {
     } catch (error) {
         console.error(error)
     }
-    
-})}
+})
