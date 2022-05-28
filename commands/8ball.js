@@ -1,5 +1,5 @@
-module.exports = (client) => {
-client.on('messageCreate', async message => {
+exports.run = (client, message, args) => {
+    exports.name = client.on('messageCreate', async message => {
     if (message.author.bot) return
     if (message.content.toLowerCase().startsWith("weasel,")) {
       let replies = ['answer', 'yet another answer', 'wow another answer', 'you guessed it, another answer'];
