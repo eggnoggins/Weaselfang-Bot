@@ -1,5 +1,5 @@
 const fs = require('fs')
-const getFiles = required('./get-files')
+const getFiles = require('./get-files')
 
 module.exports = (client) => {
 
