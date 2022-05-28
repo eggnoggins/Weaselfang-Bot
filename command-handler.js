@@ -27,7 +27,7 @@ client.on('messageCreate', (message) => {
         return
     }
 
-    const args = message.content.slice(1).split(/ +/)
+    const prefix = "w!";
     const commandName = args.shift().toLowercase()
 
     if (!commands[commandName]) {
