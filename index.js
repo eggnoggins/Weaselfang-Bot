@@ -1,8 +1,8 @@
 // Require the necessary discord.js classes
 const { token } = require('./config.json');
-const fs = require("fs");
+const fs = require('node:fs');
+const path = require('node:path');
 const { REST } = require("@discordjs/rest");
-const { Route } = require('discord-api-types/v9');
 const { SlashCommandBuilder } = require('@discordjs/builders');
 
 const { Client, Intents, Collection } = require("discord.js")
