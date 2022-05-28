@@ -1,4 +1,4 @@
-exports.run = (client, message) => {
+module.exports = (client) => {
 client.on('messageCreate', async message => {
     if (message.author.bot) return
     if (message.content.toLowerCase().startsWith("weasel,")) {
