@@ -1,3 +1,4 @@
+exports.run = (client, message, args) =>
 triggerWords.push(new Trigger("weasel,", () => {
     switch (Math.round(Math.random() * 21)) {
         case 0:
