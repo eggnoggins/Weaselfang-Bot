@@ -1,9 +1,13 @@
 exports.run = (client, message, args) => {
-    message.channel.send
-      let replies = ['answer', 'yet another answer', 'wow another answer', 'you guessed it, another answer'];
+        if (message.author.bot) return
+      let replies = [
+        'answer', 
+        'yet another answer', 
+        'wow another answer', 
+        'you guessed it, another answer',];
       let result = replies[Math.floor(Math.random() * (replies.length))]
 
-      .catch(console.error)
+      message.channel.send(result)
     }
 
 exports.name = "roll";
