@@ -1,7 +1,7 @@
 const fs = require('fs')
 const getFiles = required('./get-files')
 
-module.exports = (client) => {}
+module.exports = (client) => {
 
 const commands = {}
 
@@ -40,4 +40,4 @@ client.on('messageCreate', (message) => {
         console.error(error)
     }
     
-})
+})}
