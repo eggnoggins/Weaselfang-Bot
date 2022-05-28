@@ -28,19 +28,15 @@ client.once('ready', () => {
 	client.user.setActivity('with fire 🔥', { type: 'PLAYING' });
 });
 
-client.on('interactionCreate', async interaction => {
-	if (!interaction.isCommand()) return;
+client.on('message', message => {
+	if(!message.content.startsWith(PREFIX)|| message.author.bot) return 
+	const arg = message.content.slice(PREFIX.length).split(/ +/)
+	const command= arg.shift().toLowerCase()
+	if (command === 'ping'){
+		client.commands.get('ping').execute(message,arg)
 
-	const command = client.commands.get(interaction.commandName);
-
-	if (!command) return;
-
-	try {
-		await command.execute(interaction);
-	} catch (error) {
-		console.error(error);
-		await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
 	}
+   
 });
 
 client.login(token);
