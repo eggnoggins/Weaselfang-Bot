@@ -1,7 +1,7 @@
 // Require the necessary discord.js classes
 const DJS = require('discord.js')
 const { Intents } = DJS
-const { token } = require('./config.json');
+require('dotenv/config')
 const { SlashCommandBuilder } = require('@discordjs/builders');
 
 // Create a new client instance
@@ -19,4 +19,4 @@ client.on('ready', () => {
 	handler(client)
 });
 
-client.login(token);
+client.login(process.env.TOKEN);
