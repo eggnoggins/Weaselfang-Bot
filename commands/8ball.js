@@ -1,7 +1,13 @@
-exports.run = (client, message, args) =>
-triggerWords.push(new Trigger("weasel,", () => {
-    switch (Math.round(Math.random() * 21)) {
-        case 0:
+const triggerWords = ['weasel,'];
+
+client.on('messageCreate', (message) => 
+    {if (message.author.bot) return false;
+  
+    triggerWords.forEach((word) => 
+      {if (message.content.includes(word)) 
+        message.reply(message.content);
+    switch (Math.round(Math.random() * 21)) 
+        {case 0:
             return "Yes.";
         case 1:
             return "No.";
@@ -47,4 +53,4 @@ triggerWords.push(new Trigger("weasel,", () => {
             return "I approve."            
 
     }
-}));
+});})

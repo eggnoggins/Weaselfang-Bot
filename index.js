@@ -2,6 +2,7 @@
 const { token } = require('./config.json');
 const { Client, Intents, Collection } = require("discord.js");
 const fs = require("fs");
+const triggerWords = ['weasel,'];
 
 const client = new Client({
 	intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]
