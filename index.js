@@ -48,7 +48,10 @@ client.on('messageCreate', async message => {
 	  "If it makes you happy, yes.",
 	  "I don't see why not.",
 	  "Only StarClan knows.",
-	  "``Weaselfang lets out a yawn, blinking at you.`` I'm a bit busy right now, ask someone else.",];
+	  "``Weaselfang lets out a yawn, blinking at you.`` I'm a bit busy right now, ask someone else.",
+	  "I'd like to believe so.",
+	  "It's possible.",
+	  "Absolutely.",];
       let result = replies[Math.floor(Math.random() * (replies.length))]
 
       message.reply(result)
