@@ -1,7 +1,7 @@
 // Require the necessary discord.js classes
 const DJS = require('discord.js')
 const { Intents } = DJS
-require('./config.json');
+require('/config.json');
 
 // Create a new client instance
 const client = new Client({ 
