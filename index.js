@@ -4,6 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { REST } = require("@discordjs/rest");
 const { SlashCommandBuilder } = require('@discordjs/builders');
+const { prefix } = "w!"
 
 const { Client, Intents, Collection } = require("discord.js")
 const client = new Client({ 
