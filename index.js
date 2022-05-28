@@ -7,7 +7,7 @@ const { Intents } = DJS;
 const { token } = require('./config.json');
 const { SlashCommandBuilder } = require('@discordjs/builders');
 
-// Create a new client instance
+const { Client, Intents, Collection } = require("discord.js")
 const client = new Client({ 
 	intents: [
 		Intents.FLAGS.GUILDS, 
