@@ -4,6 +4,7 @@ const { Client, Intents, Collection } = require("discord.js");
 const fs = require("fs");
 const { userMention, memberNicknameMention, channelMention, roleMention } = require('@discordjs/builders');
 const commandFolders = fs.readdirSync('./commands');
+client.commands = new Discord.Collection();
 
 const client = new Client({
 	intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]
@@ -20,7 +21,7 @@ const client = new Client({
 	client.on(eventName, event.bind(null, client));
   }
   
-  const commands = fs.readdirSync("./commands").filter(file => file.endsWith(".js"));
+  const commands = fs.readdirSync(`./commands`).filter(file => file.endsWith(".js"));
   for (const file of commands) {
 	const commandName = file.split(".")[0];
 	const command = require(`./commands/${file}`);
@@ -30,14 +31,17 @@ const client = new Client({
 	client.commands.set(commandName, command);
   }
 
-  for (const folder of commandFolders) {
-	const commandFiles = fs.readdirSync(`./commands/${folder}`).filter(file => file.endsWith('.js'));
-	for (const file of commandFiles) {
-		const command = require(`./commands/${folder}/${file}`);
 
-		client.commands.set(command.name, command);
-	}
+  const commandFiles = fs.readdirSync(`./commands/${folder}`).filter(file => file.endsWith(".js"));
+for (const file of commands) {
+  const commandName = file.split(".")[0];
+  const command = require(`./commands/${folder}/${file}`);
+  
+
+  console.log(`Attempting to load command ${commandName}`);
+  client.commands.set(commandName, command);
 }
+
 
 client.once('ready', () => {
 	console.log('Weaselfang has been sent to the mountain!')
