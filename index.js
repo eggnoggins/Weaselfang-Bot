@@ -18,13 +18,13 @@ const client = new Client({
 	client.on(eventName, event.bind(null, client));
   }
   
-  const folders = fs.readdirSync("./commands").filter(file => file.endsWith(".js"));
+	const folders = fs.readdirSync("./commands").filter(file => file.endsWith(".js"));
   for (const folder of folders) {
 
 	const commands = fs.readdirSync("./commands/${folder}").filter(file => file.endsWith(".js"));
     for (const file of commands) {
       const commandName = file.split(".")[0];
-      const command = require(`./commands/${folder}/${file}`);
+      const command = requirwe(`./commands/${folder}/${file}`);
   
     console.log(`Attempting to load command ${commandName}`);
     client.commands.set(commandName, command);
