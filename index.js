@@ -19,14 +19,23 @@ const client = new Client({
 	client.on(eventName, event.bind(null, client));
   }
   
-  const commands = fs.readdirSync("./commands/1SparrowClan").filter(file => file.endsWith(".js"));
+  const commands = fs.readdirSync("./commands").filter(file => file.endsWith(".js"));
   for (const file of commands) {
 	const commandName = file.split(".")[0];
-	const command = require(`./commands/1SparrowClan/${file}`);
+	const command = require(`./commands/${file}`);
+	
   
 	console.log(`Attempting to load command ${commandName}`);
 	client.commands.set(commandName, command);
   }
+
+  for (const folder of commandFolders) {
+	const commandFiles = fs.readdirSync(`./commands/${folder}`).filter(file => file.endsWith('.js'));
+	for (const file of commandFiles) {
+		const command = require(`./commands/${folder}/${file}`);
+		client.commands.set(command.name, command);
+	}
+}
 
 client.once('ready', () => {
 	console.log('Weaselfang has been sent to the mountain!')
