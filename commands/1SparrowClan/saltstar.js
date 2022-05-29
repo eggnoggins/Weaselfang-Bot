@@ -2,4 +2,4 @@ exports.run = (client, message, args) => {
     message.channel.send("pong!").catch(console.error);
 }
 
-exports.name = "Sparrowstar";
+exports.name = "saltstar";
