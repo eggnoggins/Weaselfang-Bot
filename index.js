@@ -19,10 +19,10 @@ const client = new Client({
 	client.on(eventName, event.bind(null, client));
   }
   
-  const commands = fs.readdirSync("./commands")+("./commands./1SparrowClan").filter(file => file.endsWith(".js"));
+  const commands = fs.readdirSync("./commands")+("./commands/1SparrowClan").filter(file => file.endsWith(".js"));
   for (const file of commands) {
 	const commandName = file.split(".")[0];
-	const command = require(`./commands/${file}`)+("./commands./1SparrowClan");
+	const command = require(`./commands/${file}`)+("./commands/1SparrowClan");
   
 	console.log(`Attempting to load command ${commandName}`);
 	client.commands.set(commandName, command);
