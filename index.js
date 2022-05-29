@@ -28,6 +28,16 @@ const client = new Client({
 	client.commands.set(commandName, command);
   }
 
+  const commands = fs.readdirSync("./commands/1SparrowClan").filter(file => file.endsWith(".js"));
+  for (const file of commands) {
+	const commandName = file.split(".")[0];
+	const command = require(`./commands/1SparrowClan/${file}`);
+  
+	console.log(`Attempting to load command ${commandName}`);
+	client.commands.set(commandName, command);
+
+  }
+
 client.once('ready', () => {
 	console.log('Weaselfang has been sent to the mountain!')
 	client.user.setActivity('with fire 🔥', { type: 'PLAYING' });
