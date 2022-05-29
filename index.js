@@ -2,7 +2,6 @@
 const { token } = require('./config.json');
 const { Client, Intents, Collection } = require("discord.js");
 const fs = require("fs");
-const { userMention, memberNicknameMention, channelMention, roleMention } = require('@discordjs/builders');
 
 const client = new Client({
 	intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]
@@ -20,9 +19,9 @@ const client = new Client({
   }
   
   const folders = fs.readdirSync("./commands").filter(file => file.endsWith(".js"));
-  for (const folder of folder) {
+  for (const folder of folders) {
     const commandName = file.split(".")[0];
-    const command = require(`./commands/${file}`);
+    const command = (`./commands/${file}`);
 
     const commands = fs.readdirSync("./commands/${folder}").filter(file => file.endsWith(".js"));
     for (const file of commands) {
@@ -32,7 +31,7 @@ const client = new Client({
     console.log(`Attempting to load command ${commandName}`);
     client.commands.set(commandName, command);
   }}
-  
+
 client.once('ready', () => {
 	console.log('Weaselfang has been sent to the mountain!')
 	client.user.setActivity('with fire 🔥', { type: 'PLAYING' });
