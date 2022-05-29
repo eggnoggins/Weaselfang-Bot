@@ -3,6 +3,7 @@ const { token } = require('./config.json');
 const { Client, Intents, Collection } = require("discord.js");
 const fs = require("fs");
 const { userMention, memberNicknameMention, channelMention, roleMention } = require('@discordjs/builders');
+const commandFolders = fs.readdirSync('./commands');
 
 const client = new Client({
 	intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]
@@ -33,6 +34,7 @@ const client = new Client({
 	const commandFiles = fs.readdirSync(`./commands/${folder}`).filter(file => file.endsWith('.js'));
 	for (const file of commandFiles) {
 		const command = require(`./commands/${folder}/${file}`);
+
 		client.commands.set(command.name, command);
 	}
 }
