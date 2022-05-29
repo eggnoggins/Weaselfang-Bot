@@ -27,20 +27,7 @@ const client = new Client({
   
 	console.log(`Attempting to load command ${commandName}`);
 	client.commands.set(commandName, command);
-
   }
-
-
-  const commandFiles = fs.readdirSync("./commands/${folder}").filter(file => file.endsWith(".js"));
-for (const file of commands) {
-  const commandName = file.split(".")[0];
-  const command = require(`./commands/${folder}/${file}`);
-  
-
-  console.log(`Attempting to load command ${commandName}`);
-  client.commands.set(commandName, command);
-}
-
 
 client.once('ready', () => {
 	console.log('Weaselfang has been sent to the mountain!')
