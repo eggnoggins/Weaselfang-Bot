@@ -24,7 +24,7 @@ const client = new Client({
 	const commands = fs.readdirSync("./commands/${folder}").filter(file => file.endsWith(".js"));
     for (const file of commands) {
       const commandName = file.split(".")[0];
-      const command = requirwe(`./commands/${folder}/${file}`);
+      const command = require(`./commands/${folder}/${file}`);
   
     console.log(`Attempting to load command ${commandName}`);
     client.commands.set(commandName, command);
