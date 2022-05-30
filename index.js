@@ -1,7 +1,8 @@
 // Require the necessary discord.js classes
 const { token } = require('./config.json');
 const { Client, Intents, Collection } = require("discord.js");
-const fs = require("fs");
+const fs = require('node:fs');
+const path = require('node:path');
 
 const client = new Client({
 	intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]
@@ -11,6 +12,7 @@ const client = new Client({
   client.config = config;
   client.commands = new Collection();
   
+  const WOKCommands = require('wokcommands')
   client.on('ready', async () => {
 	console.log("ready up!")
 	new WOKCommands(client, {
