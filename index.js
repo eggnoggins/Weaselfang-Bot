@@ -11,21 +11,21 @@ const client = new Client({
   client.config = config;
   client.commands = new Collection();
   
-  const events = fs.readdirSync("./events").filter(file => file.endsWith(".js"));
-  for (const file of events) {
-	const eventName = file.split(".")[0];
-	const event = require(`./events/${file}`);
-	client.on(eventName, event.bind(null, client));
-  }
-  
-  const commands = fs.readdirSync("./commands").filter(file => file.endsWith(".js"));
-  for (const file of commands) {
-	const commandName = file.split(".")[0];
-	const command = require(`./commands/${file}`);
-  
-	console.log(`Attempting to load command ${commandName}`);
-	client.commands.set(commandName, command);
-  }
+  client.on('ready', async () => {
+	console.log("ready up!")
+	new WOKCommands(client, {
+		  commandsDir: path.join(__dirname, 'commands'),
+		  disabledDefaultCommands: [
+			'help',
+			'command',
+			'language',
+			'prefix',
+			'requiredrole',
+			'channelonly'
+		  ],
+		})
+		  .setDefaultPrefix("w!")
+	})
 
 client.once('ready', () => {
 	console.log('Weaselfang has been sent to the mountain!')

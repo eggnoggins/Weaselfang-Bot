@@ -1,4 +1,11 @@
-exports.run = (client, message, args) => {
+module.exports = {
+name: "roll",
+description: "desc",
+category: "basic",
+slash: false,
+cooldown: "1s",
+callback: async ({ message, args, client }) => {
+
         if (message.author.bot) return
       let replies = [
         "🎲 <@" + message.author.id + "> rolled a 1!",
@@ -24,6 +31,4 @@ exports.run = (client, message, args) => {
       let result = replies[Math.floor(Math.random() * (replies.length))]
 
       message.channel.send(result)
-    }
-
-exports.name = "roll";
+    }}
