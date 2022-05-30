@@ -18,7 +18,7 @@ const client = new Client({
 	client.on(eventName, event.bind(null, client));
   }
   
-  const folders = fs.readdirSync("./commands").filter(file => file.endsWith("!js"));
+  const folders = fs.readdirSync("./commands")
   for (const folder of folders) {
     const commandName = file.split(".")[0];
     const command = (`./commands/${file}`);
