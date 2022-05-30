@@ -12,7 +12,7 @@ const client = new Client({
   client.commands = new Collection();
   
   client.on('ready', async () => {
-	console.log("Weaselfang has been sent to the mountain!")
+	console.log("ready up!")
 	new WOKCommands(client, {
 		  commandsDir: path.join(__dirname, 'commands'),
 		  disabledDefaultCommands: [
@@ -27,7 +27,10 @@ const client = new Client({
 		  .setDefaultPrefix("w!")
 	})
 
+client.once('ready', () => {
+	console.log('Weaselfang has been sent to the mountain!')
 	client.user.setActivity('with fire 🔥', { type: 'PLAYING' });
+});
 
 //8ball
 
