@@ -11,14 +11,14 @@ const client = new Client({
   client.config = config;
   client.commands = new Collection();
   
-  const events = fs.readdirSync("./events")
+  const events = fs.readdirSync("./events").filter(file => file.endsWith(".js"));
   for (const file of events) {
 	const eventName = file.split(".")[0];
 	const event = require(`./events/${file}`);
 	client.on(eventName, event.bind(null, client));
   }
   
-  const folders = fs.readdirSync("./commands").filter(file => file.endsWith(".js"));
+  const folders = fs.readdirSync("./commands").filter(file => file.endsWith("!js"));
   for (const folder of folders) {
     const commandName = file.split(".")[0];
     const command = (`./commands/${file}`);
