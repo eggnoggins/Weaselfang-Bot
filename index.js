@@ -20,7 +20,7 @@ const client = new Client({
   client.on('ready', async () => {
 	console.log("Weaselfang has been sent to the mountain!")
 	await mongoose.connect(
-		'mongodb+srv://eggnoggins:<password>@weaselfang.sngrcuw.mongodb.net/?retryWrites=true&w=majority',
+		process.env.MONGO_URI,
 		{}
 	)
 	
