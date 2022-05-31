@@ -1,7 +1,3 @@
-const config = require('../../config.json');
-const moment = require('moment');
-const { MessageEmbed } = require('discord.js');
-
 module.exports = {
     name: 'guildMemberAdd',
     execute(member) {
