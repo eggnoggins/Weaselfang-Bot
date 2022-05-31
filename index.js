@@ -1,39 +1,22 @@
 // Require the necessary discord.js classes
+const { token } = require('./config.json');
 const { Client, Intents, Collection } = require("discord.js");
 const fs = require('node:fs');
 const path = require('node:path');
 const WOKCommands = require('wokcommands')
-const mongoose = require('mongoose')
-require('dotenv').config()
 
 const client = new Client({
-	intents: [
-		Intents.FLAGS.GUILDS, 
-		Intents.FLAGS.GUILD_MESSAGES,
-		Intents.FLAGS.GUILD_MEMBERS]
+	intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]
   });
   const config = require("./config.json");
   // We also need to make sure we're attaching the config to the CLIENT so it's accessible everywhere!
   client.config = config;
   client.commands = new Collection();
-  client.user.setActivity('with fire 🔥', { type: 'PLAYING' });
   
   client.on('ready', async () => {
 	console.log("Weaselfang has been sent to the mountain!")
-	await mongoose.connect(
-		process.env.MONGO_URI,
-		{
-			keepAlive: true
-		}
-	)
-	
 	new WOKCommands(client, {
 		  commandsDir: path.join(__dirname, 'commands'),
-		  botOwners: ['944735267238080562'],
-		  mongoUri: process.env.MONGO_URI,
-		  dbOptions: {
-			  keepAlive: true
-		  },
 		  disabledDefaultCommands: [
 			'help',
 			'command',
@@ -44,6 +27,7 @@ const client = new Client({
 		  ],
 		})
 		  .setDefaultPrefix("w!")
+		  client.user.setActivity('with fire 🔥', { type: 'PLAYING' });
 	})
 
 
@@ -73,4 +57,4 @@ client.on('messageCreate', async message => {
     }
   })
 
-client.login(process.env.TOKEN);
+client.login(token);
