@@ -29,6 +29,11 @@ const client = new Client({
 	
 	new WOKCommands(client, {
 		  commandsDir: path.join(__dirname, 'commands'),
+		  botOwners: ['944735267238080562'],
+		  mongoUri: process.env.MONGO_URI,
+		  dbOptions: {
+			  keepAlive: true
+		  },
 		  disabledDefaultCommands: [
 			'help',
 			'command',
