@@ -12,9 +12,6 @@ const client = new Client({
 		Intents.FLAGS.GUILD_MESSAGES,
 		Intents.FLAGS.GUILD_MEMBERS]
   });
-  const config = require("./config.json");
-  // We also need to make sure we're attaching the config to the CLIENT so it's accessible everywhere!
-  client.config = config;
   client.commands = new Collection();
   
   client.on('ready', async () => {
@@ -23,7 +20,7 @@ const client = new Client({
 		'mongodb+srv://eggnoggins:<password>@weaselfang.sngrcuw.mongodb.net/?retryWrites=true&w=majority',
 		{}
 	)
-	
+
 	new WOKCommands(client, {
 		  commandsDir: path.join(__dirname, 'commands'),
 		  disabledDefaultCommands: [
