@@ -16,12 +16,15 @@ const client = new Client({
   // We also need to make sure we're attaching the config to the CLIENT so it's accessible everywhere!
   client.config = config;
   client.commands = new Collection();
+  client.user.setActivity('with fire 🔥', { type: 'PLAYING' });
   
   client.on('ready', async () => {
 	console.log("Weaselfang has been sent to the mountain!")
 	await mongoose.connect(
 		process.env.MONGO_URI,
-		{}
+		{
+			keepAlive: true
+		}
 	)
 	
 	new WOKCommands(client, {
@@ -36,7 +39,6 @@ const client = new Client({
 		  ],
 		})
 		  .setDefaultPrefix("w!")
-		  client.user.setActivity('with fire 🔥', { type: 'PLAYING' });
 	})
 
 
