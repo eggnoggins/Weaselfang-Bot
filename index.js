@@ -30,6 +30,10 @@ const client = new Client({
 		  client.user.setActivity('with fire 🔥', { type: 'PLAYING' });
 	})
 
+	client.on('guildMemberAdd', guildMember => {
+		guildMember.guild.channels.cache.get('647192592479551499').send(`:star:     __**Welcome to Passerine, <@${guildMember.user.id}>!**__`);
+	});
+
 
 //8ball
 
