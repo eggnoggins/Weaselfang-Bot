@@ -30,12 +30,12 @@ const client = new Client({
 		  client.user.setActivity('with fire 🔥', { type: 'PLAYING' });
 	})
 
-	client.on('guildMemberAdd', guildMember => {
-		guildMember.guild.channels.cache.get('647192592479551499').send(`:star:     __**Welcome to Passerine, <@${guildMember.user.id}>!**__`);
-	});
-
-	client.on('guildMemberRemove', guildMember => {
-		guildMember.guild.channels.cache.get('647192592479551499').send(`__**Goodbye, <@${guildMember.user.id}>. May StarClan light your path.**__     :crescent_moon:`);
+	bot.on('guildMemberAdd', (member) => {
+		const channelId = '647192592479551499'; // The Channel ID you just copied
+		const welcomeMessage = `⭐     __**Welcome to Passerine <@${member.id}>!**__`;
+		member.guild.channels.fetch(channelId).then(channel => {
+			channel.send(welcomeMessage)
+		});
 	});
 
 //8ball
