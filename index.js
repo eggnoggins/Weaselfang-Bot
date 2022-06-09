@@ -34,6 +34,9 @@ const client = new Client({
 		guildMember.guild.channels.cache.get('647192592479551499').send(`:star:     __**Welcome to Passerine, <@${guildMember.user.id}>!**__`);
 	});
 
+	client.on('guildMemberRemove', guildMember => {
+		guildMember.guild.channels.cache.get('647192592479551499').send(`__**Goodbye, <@${guildMember.user.id}>. May StarClan light your path.**__     :crescent_moon:`);
+	});
 
 //8ball
 
