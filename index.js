@@ -67,4 +67,28 @@ client.on('messageCreate', async message => {
     }
   })
 
+ client.on('messageReactionAdd', async (reaction, member) => {
+	if (reaction.message.id == '953779777720942632') {
+	   console.log('working')
+	   const guild = reaction.message.guild;
+	   const memberWhoReacted = guild.members.cache.find(user => user.id === member.id);
+	   if (reaction.emoji.name === `🫐`) {
+		  const role = guild.roles.cache.find(role => role.name === 'She/Her');
+		  memberWhoReacted.roles.add(role);
+	   }
+	   if (reaction.emoji.name === `🍋`) {
+		const role = guild.roles.cache.find(role => role.name === 'He/Him');
+		memberWhoReacted.roles.add(role);
+	 }
+	 if (reaction.emoji.name === `🫒`) {
+		const role = guild.roles.cache.find(role => role.name === 'They/Them');
+		memberWhoReacted.roles.add(role);
+	 }
+	 if (reaction.emoji.name === `🍎`) {
+		const role = guild.roles.cache.find(role => role.name === 'Ask');
+		memberWhoReacted.roles.add(role);
+	 }
+	}
+ })
+
 client.login(token);
