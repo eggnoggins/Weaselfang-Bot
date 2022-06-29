@@ -43,10 +43,12 @@ const client = new Client({
 	});
 
 	const rr = new ReactionRole(client, [
-		{ messageId: "12341234", reaction: "🔔", roleId: "5959859595" }, // Basic usage
-		{ messageId: "12341234", reaction: "✅", roleId: "5959859598" }, // Multiple reactions per message!
-		{ messageId: "12341234", reaction: "784536908345", roleId: "5959859598" }, // Custom emoji by ID
-		{ messageId: "12341234", reaction: "worry", roleId: "5959859598" }, // Custom emoji by emoji name
+		{ messageId: "991843947699785788", reaction: "🫐", roleId: "685364032919699458" },
+		{ messageId: "991843947699785788", reaction: "🍋", roleId: "673948522630086687" },
+		{ messageId: "991843947699785788", reaction: "🫒", roleId: "685364030679810060" },
+		{ messageId: "991843947699785788", reaction: "🍎", roleId: "953779271615279144" },
+
+		{ messageId: "991843973666721822", reaction: "💥", roleId: "685364034983559189" },
 	]);
 	
 
