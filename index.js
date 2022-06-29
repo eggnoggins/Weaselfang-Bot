@@ -6,7 +6,10 @@ const path = require('node:path');
 const WOKCommands = require('wokcommands')
 
 const client = new Client({
-	intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MEMBERS]
+	intents: [Intents.FLAGS.GUILDS, 
+		Intents.FLAGS.GUILD_MESSAGES, 
+		Intents.FLAGS.GUILD_MEMBERS, 
+		Intents.FLAGS.GUILD_MESSAGE_REACTIONS]
   });
   const config = require("./config.json");
   // We also need to make sure we're attaching the config to the CLIENT so it's accessible everywhere!
