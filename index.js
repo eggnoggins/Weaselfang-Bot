@@ -12,6 +12,9 @@ const client = new Client({
 		Intents.FLAGS.GUILD_MEMBERS, 
 		Intents.FLAGS.GUILD_MESSAGE_REACTIONS]
   });
+  const rr = new ReactionRole(client, [
+	{ messageId: "991843947699785788", reaction: "🫐", roleId: "685364032919699458" }, // Multiple reactions per message!
+  ]);
   const config = require("./config.json");
   // We also need to make sure we're attaching the config to the CLIENT so it's accessible everywhere!
   client.config = config;
@@ -69,5 +72,6 @@ client.on('messageCreate', async message => {
       message.reply(result)
     }
  })
+
 
 client.login(token);
