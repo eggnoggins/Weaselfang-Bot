@@ -42,14 +42,6 @@ const client = new Client({
 		guildMember.guild.channels.cache.get('647192592479551499').send(`__**Goodbye, <@${guildMember.user.id}>. May StarClan light your path.**__     :crescent_moon:`);
 	});
 
-	const rr = new ReactionRole(client, [
-		{ messageId: "991843947699785788", reaction: "🫐", roleId: "685364032919699458" },
-		{ messageId: "991843947699785788", reaction: "🍋", roleId: "673948522630086687" },
-		{ messageId: "991843947699785788", reaction: "🫒", roleId: "685364030679810060" },
-		{ messageId: "991843947699785788", reaction: "🍎", roleId: "953779271615279144" },
-
-		{ messageId: "991843973666721822", reaction: "💥", roleId: "685364034983559189" },
-	]);
 	
 
 //8ball
