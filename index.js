@@ -7,6 +7,7 @@ const WOKCommands = require('wokcommands')
 const { ReactionRole } = require("discordjs-reaction-role");
 
 const client = new Client({
+	partials: ["MESSAGE", "REACTION"],
 	intents: [Intents.FLAGS.GUILDS, 
 		Intents.FLAGS.GUILD_MESSAGES, 
 		Intents.FLAGS.GUILD_MEMBERS, 
