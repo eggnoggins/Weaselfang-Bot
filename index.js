@@ -7,15 +7,12 @@ const WOKCommands = require('wokcommands')
 const { ReactionRole } = require("discordjs-reaction-role");
 
 const client = new Client({
-	partials: ["MESSAGE", "REACTION"],
 	intents: [Intents.FLAGS.GUILDS, 
 		Intents.FLAGS.GUILD_MESSAGES, 
 		Intents.FLAGS.GUILD_MEMBERS, 
 		Intents.FLAGS.GUILD_MESSAGE_REACTIONS]
   });
-  const rr = new ReactionRole(client, [
-	{ messageId: "991843947699785788", reaction: "🫐", roleId: "685364032919699458" }, // Multiple reactions per message!
-  ]);
+
   const config = require("./config.json");
   // We also need to make sure we're attaching the config to the CLIENT so it's accessible everywhere!
   client.config = config;
