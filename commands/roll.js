@@ -30,5 +30,5 @@ callback: async ({ message, args, client }) => {
         "🎲 <@" + message.author.id + "> rolled a 20!",];
       let result = replies[Math.floor(Math.random() * (replies.length))]
 
-      message.channel.send(result)
+      message.channel.send(result).message.delete(5000)
     }}
